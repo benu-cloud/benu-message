@@ -5,16 +5,17 @@ import (
 	"os"
 	"time"
 
+	"github.com/benu-cloud/benu-message/pkg/config"
 	"github.com/joho/godotenv"
 	"github.com/namsral/flag"
 )
 
-func ParseArgs() (m MessageBrokerSettings) {
+func ParseArgs() (m config.MessageBrokerSettings) {
 	// try to load env variables if they exist
 	godotenv.Load()
 
 	var rmqhost string
-	var rmqport PortNumber = PortNumber(5672)
+	var rmqport config.PortNumber = config.PortNumber(5672)
 	var rmqvHost string
 	var rmqusername string
 	var rmqpassword string
