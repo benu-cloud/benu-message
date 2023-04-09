@@ -1,13 +1,11 @@
-package config
+package rabbitmq
 
 import "time"
-
-type PortNumber uint
 
 // message broker settings
 type MessageBrokerSettings struct {
 	Host           string
-	Port           PortNumber
+	Port           uint
 	VHost          string
 	Username       string
 	Password       string

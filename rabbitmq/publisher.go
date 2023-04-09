@@ -4,7 +4,7 @@ import (
 	"context"
 
 	pkgerrors "github.com/benu-cloud/benu-errors"
-	"github.com/benu-cloud/benu-message/pkg/message"
+	"github.com/benu-cloud/benu-message/message"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 

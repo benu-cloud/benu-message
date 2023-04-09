@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/benu-cloud/benu-message/internal/config"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
@@ -13,7 +12,7 @@ type RabbitMQConnection struct {
 	publishTimeout time.Duration
 }
 
-func NewConnection(config *config.MessageBrokerSettings) (*RabbitMQConnection, error) {
+func NewConnection(config *MessageBrokerSettings) (*RabbitMQConnection, error) {
 	uri := fmt.Sprintf("amqp://%s:%s@%s:%d/%s", config.Username, config.Password, config.Host, config.Port, config.VHost)
 	conn, err := amqp.Dial(uri)
 	if err != nil {
